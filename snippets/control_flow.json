@@ -10,7 +10,7 @@
       "     ${5:action}",
       "{% endcase %}"
     ],
-    "description": "Bridgetown: Case Statement"
+    "description": "Creates a switch statement to compare a variable with different values. case initializes the switch statement, and when compares its values."
   },
   "Bridgetown: Elseif Statement": {
     "prefix": "btelif",
