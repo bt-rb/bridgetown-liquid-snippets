@@ -1,4 +1,13 @@
 {
+  "Bridgetown: Comment": {
+    "prefix": "btcomment",
+    "body": [
+      "{% comment %}",
+      "   $1",
+      "{% endcomment %}"
+    ],
+    "description": "Allows you to leave un-rendered code inside a Liquid template. Any text within the opening and closing comment blocks will not be printed, and any Liquid code within will not be executed."
+  },
 	"Bridgetown: SVG": {
 		"prefix": "btsvg",
 		"body": ["{% svg images/$1.svg class=\"$2\" %}"],
