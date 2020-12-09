@@ -1,0 +1,82 @@
+{
+	"Bridgetown: Class Map": {
+    "prefix": "btcm",
+    "body": ["{% class_map $1: $2 %}"],
+    "description": "Bridgetown: Class Map"
+  },
+  "Bridgetown: Component Block": {
+    "prefix": "btcb",
+    "body": [
+      "{% rendercontent \"$1\" %}",
+      "  $2",
+      "{% endrendercontent %}$0",
+      ""
+    ],
+    "description": "Bridgetown: Component Block"
+  },
+  "Bridgetown: Component": {
+    "prefix": "btc",
+    "body": [
+      "{% render \"${1:component}\", metadata: ${2:site.metadata} %}"
+    ],
+    "description": "Bridgetown: Component"
+  },
+	"Bridgetown: Component Front Matter": {
+    "prefix": "btcfm",
+    "body": [
+      "---",
+      "name: ${1:name}",
+      "description: ${2:description}",
+      "variables:",
+      "  ${3:variable}:",
+      "    - ${4:variablename}",
+      "    - ${5:variabledescription}",
+      "  ${6:optional}?: object",
+      "  content: markdown",
+      "---",
+      "",
+      "${0:content}"
+    ],
+    "description": "Bridgetown: Render"
+	},
+	"Bridgetown: Date Filter": {
+    "prefix": "btdf",
+    "body": ["{{ $1 | date_to_long_string }}"],
+    "description": "Bridgetown: Date Filter"
+  },
+	"Bridgetown: Find Tag": {
+    "prefix": "btft",
+    "body": ["{% find $1 in $2, $3 %}$0"],
+    "description": "Bridgetown: Find Tag"
+  },
+	"Bridgetown: Liquid Variable": {
+    "prefix": "btlv",
+    "body": ["{{ $1 }}$0"],
+    "description": "Bridgetown: Liquid Variable"
+	},
+	"Bridgetown: Reading Time Filter": {
+    "prefix": "btrtf",
+    "body": ["{{ page.content | reading_time }}"],
+    "description": "Bridgetown: Reading Time Filter"
+  },
+	"Bridgetown: SVG": {
+		"prefix": "btsvg",
+		"body": ["{% svg images/$1.svg class=\"$2\" %}"],
+		"description": "Bridgetown: SVG"
+	},
+	"Bridgetown: Titleize Filter": {
+    "prefix": "bttf",
+    "body": ["{{ $1 | titleize }}$0"],
+    "description": "Bridgetown: Titleize Filter"
+  },
+  "Bridgetown: With Block": {
+    "prefix": "btwb",
+    "body": ["{% with $1 %}", "  $2", "{% endwith %}$0", ""],
+    "description": "Bridgetown: With Block"
+	},
+  "Bridgetown: Word Count Filter": {
+    "prefix": "btwcf",
+    "body": ["{{ page.content | number_of_words }}"],
+    "description": "Bridgetown: Word Count Filter"
+  }
+}

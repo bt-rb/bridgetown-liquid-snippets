@@ -1,0 +1,20 @@
+{
+    "name": "btrb-liquid-snippets",
+    "displayName": "btrb liquid snippets",
+    "description": "Bridgetownrb liquid snippets",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "liquid",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
