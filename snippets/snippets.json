@@ -44,10 +44,19 @@
     "body": ["{{ $1 | date_to_long_string }}"],
     "description": "Bridgetown: Date Filter"
   },
-	"Bridgetown: Find Tag": {
+  "Bridgetown: Find One": {
     "prefix": "btft",
-    "body": ["{% find $1 in $2, $3 %}$0"],
-    "description": "Bridgetown: Find Tag"
+    "body": [
+      "{% find ${1:item} in ${2:collection}, ${3:expressions} %}"
+    ],
+    "description": "Bridgetown: Find One"
+  },
+  "Bridgetown: Find Multiple": {
+    "prefix": "btft*",
+    "body": [
+      "{% find ${1:item} where ${2:collection}, ${3:expressions} %}"
+    ],
+    "description": "Bridgetown: Find One"
   },
   "Bridgetown: If Statement": {
     "prefix": "btif",
@@ -59,16 +68,39 @@
     ],
     "description": "Bridgetown: If Statement"
   },
+  "Bridgetown: Markdownify": {
+    "prefix": "btmd",
+    "body": [
+      "{{ ${1:md_format_string} | markdownify }}"
+    ],
+    "description": "Convert a Markdown-formatted string into HTML."
+  },
 	"Bridgetown: Reading Time Filter": {
     "prefix": "btrtf",
     "body": ["{{ page.content | reading_time }}"],
     "description": "Bridgetown: Reading Time Filter"
   },
+  "Bridgetown: Smartify": {
+    "prefix": "btmsmart",
+    "body": [
+      "{{ ${1:quotes} | smartify }}"
+    ],
+    "description": "Convert \"quotes\" into “smart quotes.”"
+  },
 	"Bridgetown: SVG": {
 		"prefix": "btsvg",
 		"body": ["{% svg images/$1.svg class=\"$2\" %}"],
 		"description": "Bridgetown: SVG"
-	},
+  },
+  "Bridgetown: Syntax Highlighting": {
+    "prefix": "btsh",
+    "body": [
+      "{% highlight ${1:language} %}",
+      "${2:content to be highlighted}",
+      "{% endhighlight %}"
+    ],
+    "description": "Bridgetown has built in support for syntax highlighting of over 100 languages"
+  },
 	"Bridgetown: Titleize Filter": {
     "prefix": "bttf",
     "body": ["{{ $1 | titleize }}$0"],
