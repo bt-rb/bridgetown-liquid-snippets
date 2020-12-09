@@ -1,12 +1,12 @@
 {
-    "name": "btrb-liquid-snippets",
-    "displayName": "btrb liquid snippets",
+    "name": "bridgetown-liquid-snippets",
+    "displayName": "Bridgetown Liquid Snippets",
     "description": "Bridgetownrb liquid snippets",
     "version": "0.0.1",
     "icon": "btrb.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bt-rb/btrb-liquid-snippets"
+        "url": "https://github.com/bt-rb/bridgetown-liquid-snippets"
     },
     "engines": {
         "vscode": "^1.51.0"
