@@ -18,7 +18,19 @@
         "snippets": [
             {
                 "language": "liquid",
-                "path": "./snippets/snippets.json"
+                "path": "./snippets/general.json"
+            },
+            {
+                "language": "liquid",
+                "path": "./snippets/filters.json"
+            },
+            {
+                "language": "liquid",
+                "path": "./snippets/tags.json"
+            },
+            {
+                "language": "liquid",
+                "path": "./snippets/control_flow.json"
             }
         ]
     }

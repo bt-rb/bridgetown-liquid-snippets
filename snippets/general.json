@@ -1,0 +1,33 @@
+{
+	"Bridgetown: SVG": {
+		"prefix": "btsvg",
+		"body": ["{% svg images/$1.svg class=\"$2\" %}"],
+		"description": "Bridgetown: SVG"
+  },
+  "Bridgetown: Truncate": {
+    "prefix": "bttrunc",
+    "body": [
+      "",
+      "{{ \"${1:string_to_truncate}\" | truncate: ${2:num_of_chars}, \"${3:cstm_ellip_or_no(\"\")_ellip}\" }}"
+    ],
+    "description": "Bridgetown: Truncate"
+  },
+  "Bridgetown: Variable Assign": {
+    "prefix": "btva",
+    "body": [
+      "",
+      "{% assign ${1:variable_name} = $2 %}"
+    ],
+    "description": "Bridgetown: Variable Assign"
+  },
+  "Bridgetown: Variable Output": {
+    "prefix": "btvo",
+    "body": ["{{ $1 }}$0"],
+    "description": "Bridgetown: Liquid Variable"
+	},
+  "Bridgetown: With Block": {
+    "prefix": "btwb",
+    "body": ["{% with $1 %}", "  $2", "{% endwith %}$0", ""],
+    "description": "Bridgetown: With Block"
+	}
+}
