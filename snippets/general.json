@@ -1,12 +1,12 @@
 {
-  "Bridgetown: Comment": {
-    "prefix": "btcomment",
+  "Bridgetown: Raw": {
+    "prefix": "btraw",
     "body": [
-      "{% comment %}",
-      "   $1",
-      "{% endcomment %}"
+      "{% raw %}",
+      "  $1",
+      "{% endraw %}"
     ],
-    "description": "Allows you to leave un-rendered code inside a Liquid template. Any text within the opening and closing comment blocks will not be printed, and any Liquid code within will not be executed."
+    "description": "Raw temporarily disables tag processing. This is useful for generating content (eg, Mustache, Handlebars) which uses conflicting syntax."
   },
 	"Bridgetown: SVG": {
 		"prefix": "btsvg",
@@ -21,19 +21,6 @@
     ],
     "description": "Bridgetown: Truncate"
   },
-  "Bridgetown: Variable Assign": {
-    "prefix": "btva",
-    "body": [
-      "",
-      "{% assign ${1:variable_name} = $2 %}"
-    ],
-    "description": "Bridgetown: Variable Assign"
-  },
-  "Bridgetown: Variable Output": {
-    "prefix": "btvo",
-    "body": ["{{ $1 }}$0"],
-    "description": "Bridgetown: Liquid Variable"
-	},
   "Bridgetown: With Block": {
     "prefix": "btwb",
     "body": ["{% with $1 %}", "  $2", "{% endwith %}$0", ""],
