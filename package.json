@@ -3,6 +3,11 @@
     "displayName": "btrb liquid snippets",
     "description": "Bridgetownrb liquid snippets",
     "version": "0.0.1",
+    "icon": "btrb.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bt-rb/btrb-liquid-snippets"
+    },
     "engines": {
         "vscode": "^1.51.0"
     },
