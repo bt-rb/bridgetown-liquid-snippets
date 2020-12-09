@@ -1,4 +1,30 @@
 {
+  "Bridgetown: Case Statement": {
+    "prefix": "btcase",
+    "body": [
+      "{% assign ${1:variable} = ${2:value} %}",
+      "{% case ${1:variable} %}",
+      "  {% when ${3:some_value} %}",
+      "     ${4:action}",
+      "  {% else %}",
+      "     ${5:action}",
+      "{% endcase %}"
+    ],
+    "description": "Bridgetown: Case Statement"
+  },
+  "Bridgetown: Elseif Statement": {
+    "prefix": "btelif",
+    "body": [
+      "{% if ${1:condition} %}",
+      "  ${2:action}",
+      "{% elsif ${3:condition} %}",
+      "  ${3:action}",
+      "{% else %}",
+      "  ${4:action}",
+      "{% endif %}"
+    ],
+    "description": "Adds more conditions within an if block."
+  },
 	"Bridgetown: If Statement": {
     "prefix": "btif",
     "body": [
@@ -7,6 +33,26 @@
       "  ${2:action}",
       "{% endif %}"
     ],
-    "description": "Bridgetown: If Statement"
+    "description": "Executes a block of code only if a certain condition is true."
+  },
+  "Bridgetown: If/Else Statement": {
+    "prefix": "btifel",
+    "body": [
+      "{% if ${1:condition} %}",
+      "  ${2:action}",
+      "{% else %}",
+      "  ${3:action}",
+      "{% endif %}"
+    ],
+    "description": "Adds more conditions within an if block."
+  },
+  "Bridgetown: Unless Statement": {
+    "prefix": "btun",
+    "body": [
+      "{% unless ${1:condition} %}",
+      "  ${2:action}",
+      "{% endunless %}"
+    ],
+    "description": "The opposite of if – executes a block of code only if a certain condition is not met."
   }
 }
