@@ -1,0 +1,29 @@
+{
+  "Bridgetown: Raw": {
+    "prefix": "btraw",
+    "body": [
+      "{% raw %}",
+      "  $1",
+      "{% endraw %}"
+    ],
+    "description": "Raw temporarily disables tag processing. This is useful for generating content (eg, Mustache, Handlebars) which uses conflicting syntax."
+  },
+	"Bridgetown: SVG": {
+		"prefix": "btsvg",
+		"body": ["{% svg images/$1.svg class=\"$2\" %}"],
+		"description": "Bridgetown: SVG"
+  },
+  "Bridgetown: Truncate": {
+    "prefix": "bttrunc",
+    "body": [
+      "",
+      "{{ \"${1:string_to_truncate}\" | truncate: ${2:num_of_chars}, \"${3:cstm_ellip_or_no(\"\")_ellip}\" }}"
+    ],
+    "description": "Bridgetown: Truncate"
+  },
+  "Bridgetown: With Block": {
+    "prefix": "btwb",
+    "body": ["{% with $1 %}", "  $2", "{% endwith %}$0", ""],
+    "description": "Bridgetown: With Block"
+	}
+}

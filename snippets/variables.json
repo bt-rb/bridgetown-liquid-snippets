@@ -1,0 +1,36 @@
+{
+	"Bridgetown: Variable Assign": {
+    "prefix": "btva",
+    "body": [
+      "",
+      "{% assign ${1:variable_name} = $2 %}"
+    ],
+    "description": "Creates a new variable."
+  },
+  "Bridgetown: Variable Capture": {
+    "prefix": "btvcap",
+    "body": [
+      "{% capture ${1:variable_name} %}${2:string_to_capture}{% endcapture %}"
+    ],
+    "description": "Captures the string inside of the opening and closing tags and assigns it to a variable. Variables created through capture are strings."
+  },
+  "Bridgetown: Variable Decrement": {
+    "prefix": "btvdec",
+    "body": [
+      "{% decrement ${1:variable_to_decrement} %}"
+    ],
+    "description": "Creates a new number variable, and decreases its value by one every time it is called. The initial value is -1."
+  },
+  "Bridgetown: Variable Increment": {
+    "prefix": "btvinc",
+    "body": [
+      "{% increment ${1:variable_to_increment} %}"
+    ],
+    "description": "Creates a new number variable, and increases its value by one every time it is called. The initial value is 0."
+  },
+  "Bridgetown: Variable Output": {
+    "prefix": "btvo",
+    "body": ["{{ $1 }}$0"],
+    "description": "Bridgetown: Liquid Variable"
+	}
+}

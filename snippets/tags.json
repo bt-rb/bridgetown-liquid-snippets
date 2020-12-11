@@ -1,0 +1,65 @@
+{
+	"Bridgetown: Class Map": {
+    "prefix": "btcm",
+    "body": ["{% class_map $1: $2 %}"],
+    "description": "Bridgetown: Class Map"
+  },
+	"Bridgetown: Component Block": {
+    "prefix": "btcb",
+    "body": [
+      "{% rendercontent \"$1\" %}",
+      "  $2",
+      "{% endrendercontent %}$0",
+      ""
+    ],
+    "description": "Bridgetown: Component Block"
+  },
+  "Bridgetown: Component": {
+    "prefix": "btc",
+    "body": [
+      "{% render \"${1:component}\", metadata: ${2:site.metadata} %}"
+    ],
+    "description": "Bridgetown: Component"
+  },
+	"Bridgetown: Component Front Matter": {
+    "prefix": "btcfm",
+    "body": [
+      "---",
+      "name: ${1:name}",
+      "description: ${2:description}",
+      "variables:",
+      "  ${3:variable}:",
+      "    - ${4:variablename}",
+      "    - ${5:variabledescription}",
+      "  ${6:optional}?: object",
+      "  content: markdown",
+      "---",
+      "",
+      "${0:content}"
+    ],
+    "description": "Bridgetown: Render"
+	},
+  "Bridgetown: Find One": {
+    "prefix": "btft",
+    "body": [
+      "{% find ${1:item} in ${2:collection}, ${3:expressions} %}"
+    ],
+    "description": "Bridgetown: Find One"
+  },
+  "Bridgetown: Find Multiple": {
+    "prefix": "btft*",
+    "body": [
+      "{% find ${1:item} where ${2:collection}, ${3:expressions} %}"
+    ],
+    "description": "Bridgetown: Find One"
+	},
+	"Bridgetown: Syntax Highlighting": {
+    "prefix": "btsh",
+    "body": [
+      "{% highlight ${1:language} %}",
+      "${2:content to be highlighted}",
+      "{% endhighlight %}"
+    ],
+    "description": "Bridgetown has built in support for syntax highlighting of over 100 languages"
+	}
+}

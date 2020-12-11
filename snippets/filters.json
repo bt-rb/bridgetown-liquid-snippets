@@ -1,0 +1,36 @@
+{
+	"Bridgetown: Date Filter": {
+    "prefix": "btdf",
+    "body": ["{{ $1 | date_to_long_string }}"],
+    "description": "Bridgetown: Date Filter"
+	},
+	"Bridgetown: Markdownify": {
+    "prefix": "btmd",
+    "body": [
+      "{{ ${1:md_format_string} | markdownify }}"
+    ],
+    "description": "Convert a Markdown-formatted string into HTML."
+  },
+	"Bridgetown: Reading Time Filter": {
+    "prefix": "btrtf",
+    "body": ["{{ page.content | reading_time }}"],
+    "description": "Bridgetown: Reading Time Filter"
+  },
+  "Bridgetown: Smartify": {
+    "prefix": "btmsmart",
+    "body": [
+      "{{ ${1:quotes} | smartify }}"
+    ],
+    "description": "Convert \"quotes\" into “smart quotes.”"
+	},
+	"Bridgetown: Titleize Filter": {
+    "prefix": "bttf",
+    "body": ["{{ $1 | titleize }}$0"],
+    "description": "Bridgetown: Titleize Filter"
+	},
+	"Bridgetown: Word Count Filter": {
+    "prefix": "btwcf",
+    "body": ["{{ page.content | number_of_words }}"],
+    "description": "Bridgetown: Word Count Filter"
+  }
+}
