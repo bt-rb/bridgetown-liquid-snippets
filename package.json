@@ -2,7 +2,7 @@
   "name": "bridgetown-liquid-snippets",
   "displayName": "Bridgetown Liquid Snippets",
   "description": "Bridgetownrb liquid snippets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "icon": "btrb.png",
   "repository": {
     "type": "git",
