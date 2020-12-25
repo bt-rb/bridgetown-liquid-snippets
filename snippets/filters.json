@@ -1,9 +1,93 @@
 {
+  "Bridgetown: Array to Sentence": {
+    "prefix": "btarrtosent",
+    "body": [
+      "{{ ${1:page.tags} | array_to_sentence_string }}"
+    ],
+    "description": "Convert an array into a sentence. Useful for listing tags. Optional argument for connector."
+  },
+  "Bridgetown: CGI Escape": {
+    "prefix": "btcgiesc",
+    "body": [
+      "{{ \"${1:foo, bar; baz?}\" | cgi_escape }}"
+    ],
+    "description": "CGI escape a string for use in a URL. Replaces any special characters with appropriate %XX replacements. CGI escape normally replaces a space with a plus + sign."
+  },
+  "Bridgetown: Data To JSON": {
+    "prefix": "btdatajson",
+    "body": [
+      "{{ $1:site.data.projects} | jsonify }}"
+    ],
+    "description": "Convert Hash or Array to JSON."
+  },
 	"Bridgetown: Date Filter": {
     "prefix": "btdf",
     "body": ["{{ $1 | date_to_long_string }}"],
     "description": "Bridgetown: Date Filter"
-	},
+  },
+  "Bridgetown: Date to Long String": {
+    "prefix": "btdatelgstr",
+    "body": [
+      "{{ ${1:site.time} | date_to_long_string }}"
+    ],
+    "description": "Format a date to long format."
+  },
+  "Bridgetown: Date to RFC-822 Format": {
+    "prefix": "btdaterfc",
+    "body": [
+      "{{ ${1:site.time} | date_to_rfc822 }}"
+    ],
+    "description": "Convert a Date into the RFC-822 format used for RSS feeds."
+  },
+  "Bridgetown: Date to String": {
+    "prefix": "btdatestr",
+    "body": [
+      "{{ ${1:site.time} | date_to_string }}"
+    ],
+    "description": "Convert a date to short format."
+  },
+  "Bridgetown: Date to Long String in ordinal UK style": {
+    "prefix": "btdatelgstruk",
+    "body": [
+      "{{ ${1:site.time} | date_to_long_string: \"ordinal\" }}"
+    ],
+    "description": "Format a date to ordinal, UK, long format."
+  },
+  "Bridgetown: Date to String in ordinal US style": {
+    "prefix": "btdatestrus",
+    "body": [
+      "{{ ${1:site.time} | date_to_string: \"ordinal\", \"US\" }}"
+    ],
+    "description": "Format a date to ordinal, US, short format."
+  },
+  "Bridgetown: Date to XML Schema": {
+    "prefix": "btdatexml",
+    "body": [
+      "{{ ${1:site.time} | date_to_xmlschema }}"
+    ],
+    "description": "Convert a Date into XML Schema (ISO 8601) format."
+  },
+  "Bridgetown: Group By": {
+    "prefix": "btgrpby",
+    "body": [
+      "{{ ${1:site.members} | group_by:\"${2:graduation_year}\" }}"
+    ],
+    "description": "Group an array's items by a given property."
+  },
+  "Bridgetown: Group By Expression": {
+    "prefix": "btgrpbyexp",
+    "body": [
+      "{{ ${1:site.members} | group_by_exp: \"${2:item}\", \"{$3:item.graduation_year} | truncate: ${4:3}, ''\" }}"
+    ],
+    "description": "Group an array's items using a Liquid expression."
+  },
+  "Bridgetown: Inspect": {
+    "prefix": "btinspect",
+    "body": [
+      "{{ ${1:page.tags} | {{ some_var | inspect }}"
+    ],
+    "description": "Convert an object into its String representation for debugging."
+  },
 	"Bridgetown: Markdownify": {
     "prefix": "btmd",
     "body": [
@@ -11,10 +95,59 @@
     ],
     "description": "Convert a Markdown-formatted string into HTML."
   },
+  "Bridgetown: Normalize Whitespace": {
+    "prefix": "btnormwhsp",
+    "body": [
+      "{{ \"${1:a \\n b}\" | normalize_whitespace }}"
+    ],
+    "description": "Replace any occurrence of whitespace with a single space."
+  },
+  "Bridgetown: Obfuscate Link": {
+    "prefix": "btobflnk",
+    "body": [
+      "{{ \"${1:+1 234 567}\" | obfuscate_link:\"${2:tel}\" }}"
+    ],
+    "description": "Obfuscate emails, telephone numbers etc. The link text is replaced by a ciphered string (using the ROT47 algorithm, so numbers are included). On page load, this cipher is reversed, so the string is readable again. Takes an optional argument to specify the URI scheme prefix (default 'mailto')"
+  },
+  "Bridgetown: Pop": {
+    "prefix": "btpop",
+    "body": [
+      "{{ ${1:page.tags} | pop }}"
+    ],
+    "description": "Pop elements from an Array. This is NON-DESTRUCTIVE, i.e. it does not mutate the array, but rather make a copy and mutate that."
+  },
+  "Bridgetown: Push": {
+    "prefix": "btpush",
+    "body": [
+      "{{ ${1:page.tags} | push: \"${2:Spokane}\" }}"
+    ],
+    "description": "Push elements from an Array. This is NON-DESTRUCTIVE, i.e. it does not mutate the array, but rather make a copy and mutate that."
+  },
 	"Bridgetown: Reading Time Filter": {
-    "prefix": "btrtf",
+    "prefix": "btreadtimef",
     "body": ["{{ page.content | reading_time }}"],
     "description": "Bridgetown: Reading Time Filter"
+  },
+  "Bridgetown: Sample": {
+    "prefix": "btsamp",
+    "body": [
+      "{{ ${1:site.pages} | sample }}"
+    ],
+    "description": "Pick a random value from an array. Optionally, pick multiple values."
+  },
+  "Bridgetown: Shift": {
+    "prefix": "btshift",
+    "body": [
+      "{{ ${1:page.tags} | shift }}"
+    ],
+    "description": "Shift elements from an Array. This is NON-DESTRUCTIVE, i.e. it does not mutate the array, but rather make a copy and mutate that."
+  },
+  "Bridgetown: Slugify": {
+    "prefix": "btslug",
+    "body": [
+      "{{ \"${1:The _config.yml file}\" | slugify }}"
+    ],
+    "description": "Convert a string into a lowercase URL 'slug'. See below for options."
   },
   "Bridgetown: Smartify": {
     "prefix": "btmsmart",
@@ -22,15 +155,66 @@
       "{{ ${1:quotes} | smartify }}"
     ],
     "description": "Convert \"quotes\" into “smart quotes.”"
-	},
-	"Bridgetown: Titleize Filter": {
-    "prefix": "bttf",
+  },
+  "Bridgetown: Sort": {
+    "prefix": "btsort",
+    "body": [
+      "{{ ${1:page.tags} | sort }}"
+    ],
+    "description": "Sort an array. Optional arguments for hashes 1. property name 2. nils order (first or last)."
+  },
+	"Bridgetown: Titleize": {
+    "prefix": "bttitleize",
     "body": ["{{ $1 | titleize }}$0"],
-    "description": "Bridgetown: Titleize Filter"
-	},
-	"Bridgetown: Word Count Filter": {
-    "prefix": "btwcf",
-    "body": ["{{ page.content | number_of_words }}"],
-    "description": "Bridgetown: Word Count Filter"
+    "description": "Transform a lowercase string, slug, or identifier string into a capitalized title."
+  },
+  "Bridgetown: To Integer": {
+    "prefix": "bttoint",
+    "body": [
+      "{{ ${1:some_var} | to_integer }}"
+    ],
+    "description": "Convert a string or boolean to integer."
+  },
+  "Bridgetown: Unshift": {
+    "prefix": "btunshift",
+    "body": [
+      "{{ ${1:page.tags} | unshift: \"Olympia\" }}"
+    ],
+    "description": "Unshift elements from an Array. This is NON-DESTRUCTIVE, i.e. it does not mutate the array, but rather make a copy and mutate that."
+  },
+  "Bridgetown: URI Escape": {
+    "prefix": "bturiesc",
+    "body": [
+      "{{ \"${1:http://foo.com/?q=foo}, ${2:\\bar?}\" | uri_escape }}"
+    ],
+    "description": "Percent encodes any special characters in a URI. URI escape normally replaces a space with %20. Reserved characters will not be escaped."
+  },
+  "Bridgetown: Where": {
+    "prefix": "btwhere",
+    "body": [
+      "{{ ${1:site.members} | where:\"${2:graduation_year}\",\"${3:2014}\" }}"
+    ],
+    "description": "Select all the objects in an array where the key has the given value."
+  },
+  "Bridgetown: Where Expression": {
+    "prefix": "btwhereexp",
+    "body": [
+      "{{ ${1:site.members} | where_exp:\"${2:item}\", \"${3:item.graduation_year} ${4:==} ${5:2014}\" }}"
+    ],
+    "description": "Select all the objects in an array where the expression is true. (Tip: You might want to try using the find tag instead.)"
+  },
+  "Bridgetown: Number of Words": {
+    "prefix": "btwrdcnt",
+    "body": [
+      "{{ ${1:page.content} | number_of_words }}"
+    ],
+    "description": "Count the number of words in some text."
+  },
+  "Bridgetown: XML Escape": {
+    "prefix": "btxmlesc",
+    "body": [
+      "{{ ${1:page.content} | xml_escape }}"
+    ],
+    "description": "Escape some text for use in XML."
   }
 }
