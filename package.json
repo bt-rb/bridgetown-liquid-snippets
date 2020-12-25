@@ -1,45 +1,55 @@
 {
-    "name": "bridgetown-liquid-snippets",
-    "displayName": "Bridgetown Liquid Snippets",
-    "description": "Bridgetownrb liquid snippets",
-    "version": "0.0.1",
-    "icon": "btrb.png",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bt-rb/bridgetown-liquid-snippets"
-    },
-    "engines": {
-        "vscode": "^1.51.0"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "contributes": {
-        "snippets": [
-            {
-                "language": "liquid",
-                "path": "./snippets/comments.json"
-            },
-            {
-                "language": "liquid",
-                "path": "./snippets/control_flows.json"
-            },
-            {
-                "language": "liquid",
-                "path": "./snippets/filters.json"
-            },
-            {
-                "language": "liquid",
-                "path": "./snippets/general.json"
-            },
-            {
-                "language": "liquid",
-                "path": "./snippets/tags.json"
-            },
-            {
-                "language": "liquid",
-                "path": "./snippets/variables.json"
-            }
-        ]
-    }
+  "name": "bridgetown-liquid-snippets",
+  "displayName": "Bridgetown Liquid Snippets",
+  "description": "Bridgetownrb liquid snippets",
+  "version": "0.0.1",
+  "icon": "btrb.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bt-rb/bridgetown-liquid-snippets"
+  },
+  "publisher": "andrewmcodes",
+  "scripts": {
+    "deploy": "vsce publish --yarn",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "standard-version": "^9.0.0",
+    "vsce": "^1.81.1"
+  },
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "liquid",
+        "path": "./snippets/comments.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./snippets/control_flows.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./snippets/filters.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./snippets/general.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./snippets/tags.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./snippets/variables.json"
+      }
+    ]
+  }
 }
